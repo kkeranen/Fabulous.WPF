@@ -69,8 +69,11 @@ module App =
 
                 Slider(0.0, 10.0, double model.Step, SetStep)
 
-                TextBlock($"Step size: %d{model.Step}")
-                    .centerText()
+                if model.Count < 2 then
+                    TextBlock($"Step size: %d{model.Step}")
+                        .centerText()
+                else
+                    Button("Decrement", Decrement)
 
                 Button("Reset", Reset)
             })
