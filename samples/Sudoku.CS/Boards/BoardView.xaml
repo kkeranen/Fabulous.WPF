@@ -1,0 +1,25 @@
+﻿<UserControl x:Class="Sudoku.CS.Boards.BoardView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:boards="clr-namespace:Sudoku.CS.Boards"
+             xmlns:regions="clr-namespace:Sudoku.CS.Regions"
+
+             mc:Ignorable="d" 
+             d:DataContext="{d:DesignInstance boards:BoardViewModel, IsDesignTimeCreatable=True}"
+             d:DesignHeight="400" d:DesignWidth="400"
+             SnapsToDevicePixels="True">
+    <UserControl.Resources>
+        <DataTemplate DataType="{x:Type regions:RegionViewModel}">
+            <regions:RegionView />
+        </DataTemplate>
+    </UserControl.Resources>
+    <ItemsControl ItemsSource="{Binding Regions}">
+        <ItemsControl.ItemsPanel>
+            <ItemsPanelTemplate>
+                <UniformGrid />
+            </ItemsPanelTemplate>
+        </ItemsControl.ItemsPanel>
+    </ItemsControl>
+</UserControl>
