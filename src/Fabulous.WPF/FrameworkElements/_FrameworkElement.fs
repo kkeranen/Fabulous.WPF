@@ -67,5 +67,6 @@ type FrameworkElementExtraModifiers =
 
     [<Extension>]
     static member inline center(this: WidgetBuilder<'msg, #IFrameworkElement>) =
-        this.verticalAlignment(VerticalAlignment.Center) |> ignore
-        this.horizontalAlignment(HorizontalAlignment.Center)
+        this.verticalAlignment(VerticalAlignment.Center)
+            .horizontalAlignment(HorizontalAlignment.Center)
+        

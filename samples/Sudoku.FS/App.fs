@@ -1,6 +1,7 @@
 ﻿namespace Sudoku
 
 open System
+open System.Collections.ObjectModel
 open System.Windows
 open Fabulous.WPF
 
@@ -19,13 +20,14 @@ type Msg =
        /// <summary>
        /// Gets or sets the known number of the tile (if not null). Null means that the number is not known and candidate list contains all the number candidates. 
        /// </summary>
-       Number: Nullable<int>}
+       Number: Nullable<int>
 
        /// <summary>
        /// Gets the candidate numbers. Null if the are no candidates in the creation time of tile and the number in this tile is known.
        /// If number is later set the candidates collection exists but is empty
        /// </summary>
        //public ObservableCollection<int> Candidates { get; private set; }
+       Candidates: ObservableCollection<int>}
        
 
 /// Represents the state of the game
@@ -39,19 +41,23 @@ module App =
 
     let init () =
         {
-            Tile =  { Number = 5 } }
+            Tile =  { Number = Nullable 5
+                      Candidates = null } }
 
     /// The 'update' function to update the model
-    let update gameOver msg model =
+    let update gameOver msg (model: Model) =
         match msg with
-        | Restart -> model
+        | Restart -> 
+            gameOver("Game over")
+            model
         | Ignore -> model
 
     /// The dynamic 'view' function giving the updated content for the view
-    let view model =
+    let view (model: Model) =
         Window(
             "Sudoku F# with Fabulous.WPF",
-            (TextBlock("hello")
+            (TextBlock(model.Tile.Number.Value.ToString())
+                .center()
             )                
         )
             .width(800)
