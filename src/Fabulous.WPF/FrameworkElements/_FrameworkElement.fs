@@ -19,7 +19,20 @@ module FrameworkElement =
 
     let VerticalAlignment = Attributes.defineDependencyWithEquality<VerticalAlignment> FrameworkElement.VerticalAlignmentProperty
 
-    let ClipToBounds = Attributes.defineDependencyWithEquality<bool> FrameworkElement.ClipToBoundsProperty    
+    let ClipToBounds = Attributes.defineDependencyWithEquality<bool> FrameworkElement.ClipToBoundsProperty
+    
+    let Resources =
+        Attributes.defineSimpleScalarWithEquality<ResourceDictionary>
+            "Resources"
+            (fun _ newValueOpt node ->
+                let frameWorkElement = node.Target :?> FrameworkElement
+
+                let value =
+                    match newValueOpt with
+                    | ValueNone -> frameWorkElement.Resources
+                    | ValueSome v -> v
+
+                frameWorkElement.Resources <- value)
 
 [<Extension>]
 type FrameworkElementModifiers =

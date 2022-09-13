@@ -22,6 +22,8 @@ module Tiles =
            /// </summary>           
            Candidates: ObservableCollection<int>}
 
+    let isNumberVisible tile = tile.Number.HasValue
+
     /// Represents an update to the game
     type Msg =        
         | CandidateClicked        
@@ -41,8 +43,12 @@ module Tiles =
 
     /// The dynamic 'view' function giving the updated content for the view
     let view (tile: Tile) =
-        TextBlock(tile.Number.Value.ToString())
-            .center()
+        if isNumberVisible tile then
+            TextBlock(tile.Number.Value.ToString())
+                .center()
+        else
+            TextBlock(tile.Number.Value.ToString())
+                .center()
                             
         
             
