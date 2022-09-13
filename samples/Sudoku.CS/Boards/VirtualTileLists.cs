@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using Sudoku.CS.Tiles;
-
-namespace Sudoku.CS.Regions
+﻿namespace Sudoku.CS.Boards
 {
+    using System;
+    using System.Collections;
+    using System.Collections.Generic;
+    using Tiles;
+
     public class VirtualRow : VirtualTileList
     {
         private int row;

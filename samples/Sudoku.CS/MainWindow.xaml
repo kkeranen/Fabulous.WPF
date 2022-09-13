@@ -3,10 +3,9 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:regions="clr-namespace:Sudoku.CS.Regions"
         xmlns:boards="clr-namespace:Sudoku.CS.Boards"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Sudoku" Height="600" Width="600">
     <Window.DataContext>
         <boards:BoardViewModel/>
     </Window.DataContext>

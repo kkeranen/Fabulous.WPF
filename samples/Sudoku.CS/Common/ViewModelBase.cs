@@ -10,7 +10,7 @@
     public class ViewModelBase : INotifyPropertyChanged
     {
         [field: NonSerialized]
-        public event PropertyChangedEventHandler PropertyChanged;
+        public event PropertyChangedEventHandler? PropertyChanged;
 
         protected virtual void OnPropertyChanged(PropertyChangedEventArgs e)
         {
