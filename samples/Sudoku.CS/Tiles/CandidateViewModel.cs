@@ -1,8 +1,8 @@
-﻿namespace Sudoku.CS.Tile
-{
-    using System.Collections.Specialized;
-    using Common;
+﻿using System.Collections.Specialized;
+using Sudoku.CS.Common;
 
+namespace Sudoku.CS.Tiles
+{
     public class CandidateViewModel : ViewModelBase
     {
         /// <summary>

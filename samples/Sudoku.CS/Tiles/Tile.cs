@@ -1,7 +1,7 @@
-﻿namespace Sudoku.CS.Tile
-{
-    using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 
+namespace Sudoku.CS.Tiles
+{
     public class Tile
     {
         /// <summary>

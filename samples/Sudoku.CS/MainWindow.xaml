@@ -4,18 +4,19 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Sudoku.CS"
-        xmlns:tile="clr-namespace:Sudoku.CS.Tile"
+        xmlns:tiles="clr-namespace:Sudoku.CS.Tiles"
+        xmlns:regions="clr-namespace:Sudoku.CS.Regions"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Window.DataContext>
-        <tile:TileViewModel/>
+        <regions:RegionViewModel/>
     </Window.DataContext>
     <Window.Resources>
-        <DataTemplate DataType="{x:Type tile:TileViewModel}">
-            <tile:TileView />
+        <DataTemplate DataType="{x:Type regions:RegionViewModel}">
+            <regions:RegionView />
         </DataTemplate>
     </Window.Resources>
     <Grid>
-        <ContentControl Content="{Binding SampleTile}" />
+        <ContentControl Content="{Binding }" />
 </Grid>
 </Window>

@@ -1,7 +1,7 @@
-﻿namespace Sudoku.CS.Tile
-{
-    using System.Windows.Controls;
+﻿using System.Windows.Controls;
 
+namespace Sudoku.CS.Tiles
+{
     ////using System.Windows.Input;
     ////using ViewModels;
 

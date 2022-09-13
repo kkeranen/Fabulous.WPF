@@ -1,11 +1,10 @@
-﻿namespace Sudoku.CS.Tile
+﻿using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using Sudoku.CS.Common;
+
+namespace Sudoku.CS.Tiles
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Collections.ObjectModel;
-
-    using Common;
-
     public class TileViewModel : ViewModelBase
     {
 
