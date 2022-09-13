@@ -19,7 +19,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_Solution items", "_Solutio
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sudoku.CS", "samples\Sudoku.CS\Sudoku.CS.csproj", "{451C9D61-21EC-4407-9CB9-DF3D69E205BE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sudoku.CS", "samples\Sudoku.CS\Sudoku.CS.csproj", "{451C9D61-21EC-4407-9CB9-DF3D69E205BE}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Sudoku.FS", "samples\Sudoku.FS\Sudoku.FS.fsproj", "{99EE5DD7-9B36-4CB6-9A96-C41FAECDB5F3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,6 +45,10 @@ Global
 		{451C9D61-21EC-4407-9CB9-DF3D69E205BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{451C9D61-21EC-4407-9CB9-DF3D69E205BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{451C9D61-21EC-4407-9CB9-DF3D69E205BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99EE5DD7-9B36-4CB6-9A96-C41FAECDB5F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99EE5DD7-9B36-4CB6-9A96-C41FAECDB5F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99EE5DD7-9B36-4CB6-9A96-C41FAECDB5F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99EE5DD7-9B36-4CB6-9A96-C41FAECDB5F3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -52,6 +58,7 @@ Global
 		{537E7CEE-35F6-4AEC-B0B0-5D9D240C8145} = {5C881035-88A7-4365-85AE-09FBBA1C13DE}
 		{60284EA2-A6EB-43F8-94BA-DF4D9896EA00} = {5C881035-88A7-4365-85AE-09FBBA1C13DE}
 		{451C9D61-21EC-4407-9CB9-DF3D69E205BE} = {5C881035-88A7-4365-85AE-09FBBA1C13DE}
+		{99EE5DD7-9B36-4CB6-9A96-C41FAECDB5F3} = {5C881035-88A7-4365-85AE-09FBBA1C13DE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DDC4AE63-64A8-4A33-AD63-BA6A92F0EEA2}

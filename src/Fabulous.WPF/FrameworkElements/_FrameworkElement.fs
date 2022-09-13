@@ -19,6 +19,8 @@ module FrameworkElement =
 
     let VerticalAlignment = Attributes.defineDependencyWithEquality<VerticalAlignment> FrameworkElement.VerticalAlignmentProperty
 
+    let ClipToBounds = Attributes.defineDependencyWithEquality<bool> FrameworkElement.ClipToBoundsProperty    
+
 [<Extension>]
 type FrameworkElementModifiers =
     [<Extension>]
@@ -40,6 +42,10 @@ type FrameworkElementModifiers =
     [<Extension>]
     static member inline verticalAlignment(this: WidgetBuilder<'msg, #IFrameworkElement>, value: VerticalAlignment) =
         this.AddScalar(FrameworkElement.VerticalAlignment.WithValue(value))
+
+    [<Extension>]
+    static member inline clipToBounds(this: WidgetBuilder<'msg, #IFrameworkElement>, value: bool) =
+        this.AddScalar(FrameworkElement.ClipToBounds.WithValue(value))
 
 [<Extension>]
 type FrameworkElementExtraModifiers =

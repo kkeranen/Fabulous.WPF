@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:boards="clr-namespace:Sudoku.CS.Boards"
         mc:Ignorable="d"
-        Title="Sudoku" Height="600" Width="600">
+        Title="Sudoku C#" Height="600" Width="600">
     <Window.DataContext>
         <boards:BoardViewModel/>
     </Window.DataContext>

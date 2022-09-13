@@ -2,7 +2,6 @@
 
 open System.Windows
 open System.Windows.Media
-open Fabulous
 open Fabulous.WPF
 
 open type Fabulous.WPF.View
@@ -184,6 +183,7 @@ module App =
 
             { model with
                   VisualBoardSize = Some size }
+        | Ignore -> model
 
     /// A helper used in the 'view' function to get the name
     /// of the Xaml resource for the image for a player
@@ -243,8 +243,10 @@ module App =
                     .height(20)
                     .gridRow(2)
             }
-        )                
-    )
+            )                
+        )
+            .width(800)
+            .height(800)
 
     // Display a modal message giving the game result. This is doing a UI
     // action in the model update, which is ok for modal messages. We factor
