@@ -5,6 +5,9 @@ open System.Collections.ObjectModel
 open System.Windows
 open Fabulous.WPF
 
+open Sudoku
+open Sudoku.Tiles
+
 open type Fabulous.WPF.View
    
 /// Represents an update to the game
@@ -14,21 +17,6 @@ type Msg =
 
 /// Represents the state of the game board
 // type Board = Map<Pos, GameCell>
-
- type Tile =
-    {
-       /// <summary>
-       /// Gets or sets the known number of the tile (if not null). Null means that the number is not known and candidate list contains all the number candidates. 
-       /// </summary>
-       Number: Nullable<int>
-
-       /// <summary>
-       /// Gets the candidate numbers. Null if the are no candidates in the creation time of tile and the number in this tile is known.
-       /// If number is later set the candidates collection exists but is empty
-       /// </summary>
-       //public ObservableCollection<int> Candidates { get; private set; }
-       Candidates: ObservableCollection<int>}
-       
 
 /// Represents the state of the game
 type Model =
