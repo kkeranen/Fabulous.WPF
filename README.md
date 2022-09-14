@@ -30,15 +30,15 @@ To connect to lower level View of MVU pattern you just simply call the lower lev
 
 ![Hierarchical MVU](DocResources/Hierarchical%20MVU.png)
 
-## Attched behaviors
+## Attached Behaviors
 
-Example will be provieded later
+Example will be provided later
 
 ## Data Templates
 
 Brief instructions welcome
 
-## Resources with x:Key directive
+## Resources with x:Key Directive
 
 Brief instructions welcome
 
