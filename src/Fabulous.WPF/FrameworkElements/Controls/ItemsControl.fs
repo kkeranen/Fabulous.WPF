@@ -1,6 +1,7 @@
 ﻿namespace Fabulous.WPF
 
 open Fabulous
+open System.Runtime.CompilerServices
 open System.Windows
 open System.Windows.Controls
 
@@ -52,7 +53,7 @@ module ItemsControlBuilders =
         //           )
         
         //  let buildItems<'msg, 'marker, 'itemData, 'itemMarker>
-        static member inline ItemsControl<'msg, 'itemData, 'itemMarker when 'itemMarker :> IItemsControl>
+        static member inline ItemsControl<'msg, 'itemData, 'itemMarker when 'itemMarker :> IFrameworkElement>
             (items: seq<'itemData>)
             =
             WidgetHelpers.buildItems<'msg, IItemsControl, 'itemData, 'itemMarker>
@@ -61,12 +62,10 @@ module ItemsControlBuilders =
                 items
                         
 
-//[<Extension>]
-//type ItemsControlModifiers =
-//    [<Extension>]
-//    static member inline textAlignment(this: WidgetBuilder<'msg, #ITextBlock>, value: TextAlignment) =
-//        this.AddScalar(TextBlock.TextAlignment.WithValue(value))
+[<Extension>]
+type ItemsControlModifiers =
+    [<Extension>]
+    static member inline itemTemplate(this: WidgetBuilder<'msg, #IItemsControl>, value: DataTemplate) =
+        this.AddScalar(ItemsControl.ItemTemplate.WithValue(value))
 
-//    [<Extension>]
-//    static member inline fontSize(this: WidgetBuilder<'msg, #ITextBlock>, value: double) =
-//        this.AddScalar(TextBlock.FontSize.WithValue(value))
+    

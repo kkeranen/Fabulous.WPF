@@ -18,6 +18,7 @@
 	<Compile Include="FrameworkElements\Panels\Grid.fs" />
 	<Compile Include="FrameworkElements\Controls\_Control.fs" />
 	<Compile Include="FrameworkElements\Controls\_ContentControl.fs" />
+	<Compile Include="FrameworkElements\Controls\UserControl.fs" />
 	<Compile Include="FrameworkElements\Controls\ItemsControl.fs" />
 	<Compile Include="FrameworkElements\Controls\Image.fs" />
 	<Compile Include="FrameworkElements\Controls\TextBlock.fs" />

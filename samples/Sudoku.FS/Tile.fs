@@ -20,7 +20,8 @@ module Tiles =
            /// Gets the candidate numbers. Null if the are no candidates in the creation time of tile and the number in this tile is known.
            /// If number is later set the candidates collection exists but is empty
            /// </summary>           
-           Candidates: ObservableCollection<int>}
+           Candidates: ObservableCollection<int>
+        }
 
     let isNumberVisible tile = tile.Number.HasValue
 
@@ -32,7 +33,7 @@ module Tiles =
     let init () =
         {
             Number = Nullable 5
-            Candidates = null }
+            Candidates = null } //ObservableCollection ([1; 2;]) }
             
 
     /// The 'update' function to update the model
@@ -43,12 +44,21 @@ module Tiles =
 
     /// The dynamic 'view' function giving the updated content for the view
     let view (tile: Tile) =
-        if isNumberVisible tile then
-            TextBlock(tile.Number.Value.ToString())
-                .center()
-        else
-            TextBlock(tile.Number.Value.ToString())
-                .center()
+        UserControl(
+            (Grid() {           
+                if isNumberVisible tile then
+                    TextBlock(tile.Number.Value.ToString())
+                        .center()
+                else
+                    //Image("")
+                    (ItemsControl
+                        (tile.Candidates)
+                        (fun item -> TextBlock("test")))
+
+                        .itemTemplate()    
+            }
+            )
+        )
                             
         
             
