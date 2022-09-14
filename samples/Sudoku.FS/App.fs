@@ -45,10 +45,7 @@ module App =
         Window(
             "Sudoku F# with Fabulous.WPF",
             (Tiles.view model.Tile
-            )
-            //(TextBlock(model.Tile.Number.Value.ToString())
-            //    .center()
-            //)                
+            )                            
         )
             .width(800)
             .height(800)
