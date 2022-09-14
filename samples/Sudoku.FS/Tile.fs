@@ -55,7 +55,7 @@ module Tiles =
                         (tile.Candidates)
                         (fun item -> TextBlock("test")))
 
-                        .itemTemplate()    
+                        .itemTemplate(new DataTemplate(TextBlock("test")))    
             }
             )
         )
