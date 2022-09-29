@@ -4,6 +4,7 @@ open System
 open System.Collections.ObjectModel
 open System.Windows
 open System.Windows.Controls
+open System.Windows.Controls.Primitives
 open FSharp.Collections
 open Fabulous.WPF
 
@@ -21,6 +22,7 @@ module Boards =
 
     let designData: Board = {        
         Tiles = array2D [
+           [ 0; 0; 0; 0; 0; 6; 9; 5; 2 ]
            [ 0; 1; 7; 0; 0; 0; 0; 0; 0 ] 
            [ 6; 0; 0; 8; 0; 0; 0; 4; 0 ] 
            [ 5; 0; 8; 0; 0; 0; 2; 0; 0 ] 
@@ -62,14 +64,18 @@ module Boards =
                 //    ([ "a"; "b"; "c";])
                 //    (fun tile -> TextBlock(tile))
                 
+                // Setting ItemsPanelTemplate programmatically in C#:
+                //  ItemsControl.ItemsPanel = 
+                //      new ItemsPanelTemplate(
+                //          new FrameworkElementFactory(
+                //              typeof(UniformGrid)));
                 
 
-                ItemsControl
+                (ItemsControl
                     (board.Tiles |> twoDimArrayToSeq)
-                    (fun tile -> Tiles.view tile )
+                    (fun tile -> Tiles.view tile ))
                 
-
-                    //.itemTemplate(new DataTemplate(typeof<TextBlock>)    
+                    .itemsPanel(ItemsPanelTemplate(FrameworkElementFactory(typeof<UniformGrid>)))    
             }
             )
         )

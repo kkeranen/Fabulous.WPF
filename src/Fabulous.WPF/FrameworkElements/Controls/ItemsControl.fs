@@ -42,6 +42,8 @@ module ItemsControl =
                     itemsControl.SetValue(ItemsControl.ItemsSourceProperty, value.OriginalItems))
         
     let ItemTemplate = Attributes.defineDependencyWithEquality<DataTemplate> ItemsControl.ItemTemplateProperty
+
+    let ItemsPanel = Attributes.defineDependencyWithEquality<ItemsPanelTemplate> ItemsControl.ItemsPanelProperty
     
 
 [<AutoOpen>]
@@ -68,5 +70,9 @@ type ItemsControlModifiers =
     [<Extension>]
     static member inline itemTemplate(this: WidgetBuilder<'msg, #IItemsControl>, value: DataTemplate) =
         this.AddScalar(ItemsControl.ItemTemplate.WithValue(value))
+
+    [<Extension>]
+    static member inline itemsPanel(this: WidgetBuilder<'msg, #IItemsControl>, value: ItemsPanelTemplate) =
+        this.AddScalar(ItemsControl.ItemsPanel.WithValue(value))
 
     

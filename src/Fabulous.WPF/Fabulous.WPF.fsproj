@@ -10,11 +10,14 @@
 	<Compile Include="FabColor.fs" />
 	<Compile Include="Attributes.fs" />
 	<Compile Include="Controls.fs" />
+	<Compile Include="FrameworkTemplates\_FrameworkTemplate.fs" />
+	<Compile Include="FrameworkTemplates\ItemsPanelTemplate.fs" />
 	<Compile Include="FrameworkElements\_FrameworkElement.fs" />
 	<Compile Include="VirtualizedCollection.fs" />
 	<Compile Include="Widgets.fs" />
 	<Compile Include="FrameworkElements\Panels\_Panel.fs" />
 	<Compile Include="FrameworkElements\Panels\StackPanel.fs" />
+	<Compile Include="FrameworkElements\Panels\UniformGrid.fs" />
 	<Compile Include="FrameworkElements\Panels\Grid.fs" />
 	<Compile Include="FrameworkElements\Controls\_Control.fs" />
 	<Compile Include="FrameworkElements\Controls\_ContentControl.fs" />

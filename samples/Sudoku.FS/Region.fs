@@ -71,11 +71,11 @@ module Regions =
         UserControl(
             (Grid() {           
                 
-                    ItemsControl
-                        (region.Tiles)
-                        (fun tile -> Tiles.view tile )
+                (ItemsControl
+                    (region.Tiles)
+                    (fun tile -> Tiles.view tile ))
 
-                        //.itemTemplate(new DataTemplate(TextBlock("test")))    
+                    .itemTemplate(new DataTemplate(TextBlock("test")))    
             }
             )
         )
