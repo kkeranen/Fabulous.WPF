@@ -53,14 +53,14 @@
             return new VirtualColumn(Tiles, col);
         }
 
-        public IList<Tile> GetSquare(int squareIndex)
+        public IList<Tile> GetRegion(int regionIndex)
         {
-            return new VirtualSquare(Tiles, squareIndex);
+            return new VirtualRegion(Tiles, regionIndex);
         }
 
         private void RemoveCandidatesFoundInRegions()
         {
-            RemoveCandidates(this.GetSquare);
+            RemoveCandidates(this.GetRegion);
         }
 
         private void RemoveCandidatesFoundInRows()

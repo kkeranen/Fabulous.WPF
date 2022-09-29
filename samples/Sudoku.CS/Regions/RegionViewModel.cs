@@ -9,12 +9,12 @@
 
     public class RegionViewModel : ViewModelBase
     {
-        public RegionViewModel(IList<Tile> square)
+        public RegionViewModel(IList<Tile> region)
         {
             this.Tiles = new ObservableCollection<TileViewModel>();
             for (int i = 0; i < 9; i++)
             {
-                var tileVM = new TileViewModel(square[i]);
+                var tileVM = new TileViewModel(region[i]);
                 this.Tiles.Add(tileVM);
                 tileVM.CandidateClicked += (sender, args) =>
                 {

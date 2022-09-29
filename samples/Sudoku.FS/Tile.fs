@@ -7,7 +7,6 @@ open Fabulous.WPF
 
 open type Fabulous.WPF.View
 
-
 module Tiles =
     type Tile =
         {
@@ -34,6 +33,14 @@ module Tiles =
         {
             Number = Nullable 5
             Candidates = null } //ObservableCollection ([1; 2;]) }
+
+    let createN n = { Number = Nullable n; Candidates = null }
+
+    let createC c = { 
+                        Number = Nullable(); 
+                        Candidates = if c = null then ObservableCollection ([1; 2; 3; 4; 5; 6; 7; 8; 9])
+                                     else c 
+                    }
             
 
     /// The 'update' function to update the model
@@ -51,11 +58,13 @@ module Tiles =
                         .center()
                 else
                     //Image("")
-                    (ItemsControl
+                    ItemsControl
                         (tile.Candidates)
-                        (fun item -> TextBlock("test")))
+                        (fun item -> 
+                            TextBlock (item.ToString()))
+                        //(fun item -> TextBlock(item.ToString())))
 
-                        .itemTemplate(new DataTemplate(TextBlock("test")))    
+                        //.itemTemplate(new DataTemplate())    
             }
             )
         )

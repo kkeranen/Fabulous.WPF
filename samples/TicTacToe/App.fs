@@ -61,7 +61,7 @@ type Model =
       GameScore: int * int
 
       /// The model occasionally includes things related to the view.  In this case,
-      /// we track the desired visual size of the board, to ensure a square, in response to
+      /// we track the desired visual size of the board, to ensure a region, in response to
       /// updates telling us the overall allocated size.
       VisualBoardSize: double option }
 

@@ -67,36 +67,36 @@
         }
     }
 
-    public class VirtualSquare : VirtualTileList
+    public class VirtualRegion : VirtualTileList
     {
-        private int squareIndex;
+        private int regionIndex;
 
-        public VirtualSquare(Tile[,] tiles, int squareIndex)
+        public VirtualRegion(Tile[,] tiles, int regionIndex)
             : base(tiles)
         {
-            this.squareIndex = squareIndex;
+            this.regionIndex = regionIndex;
         }
 
-        public override Tile this[int tileIndexInSquare]
+        public override Tile this[int tileIndexInRegion]
         {
             get
             {
-                return tiles[GetColIndex(tileIndexInSquare), GetRowIndex(tileIndexInSquare)];
+                return tiles[GetColIndex(tileIndexInRegion), GetRowIndex(tileIndexInRegion)];
             }
             set
             {
-                tiles[GetColIndex(tileIndexInSquare), GetRowIndex(tileIndexInSquare)] = value;
+                tiles[GetColIndex(tileIndexInRegion), GetRowIndex(tileIndexInRegion)] = value;
             }
         }
 
-        private int GetColIndex(int tileIndexInSquare)
+        private int GetColIndex(int tileIndexInRegion)
         {
-            return (squareIndex % 3) * 3 + tileIndexInSquare % 3;
+            return (regionIndex % 3) * 3 + tileIndexInRegion % 3;
         }
 
-        private int GetRowIndex(int tileIndexInSquare)
+        private int GetRowIndex(int tileIndexInRegion)
         {
-            return (squareIndex / 3) * 3 + tileIndexInSquare / 3;
+            return (regionIndex / 3) * 3 + tileIndexInRegion / 3;
         }
 
         public override int Count

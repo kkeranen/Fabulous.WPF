@@ -11,9 +11,9 @@
             this.Regions = new ObservableCollection<RegionViewModel>();
             for (int i = 0; i < 9; i++)
             {
-                var squareVM = new RegionViewModel(board.GetSquare(i));
-                this.Regions.Add(squareVM);
-                squareVM.CandidateClicked += (sender, args) => board.RemoveCandidates();
+                var regionVM = new RegionViewModel(board.GetRegion(i));
+                this.Regions.Add(regionVM);
+                regionVM.CandidateClicked += (sender, args) => board.RemoveCandidates();
             }
         }
 

@@ -7,6 +7,8 @@ open Fabulous.WPF
 
 open Sudoku
 open Sudoku.Tiles
+open Sudoku.Regions
+open Sudoku.Boards
 
 open type Fabulous.WPF.View
    
@@ -21,7 +23,7 @@ type Msg =
 /// Represents the state of the game
 type Model =
     {
-      Tile: Tile }
+      Board: Board }
 
 /// The model, update and view content of the app. This is placed in an
 /// independent model to facilitate unit testing.
@@ -29,8 +31,8 @@ module App =
 
     let init () =
         {
-            Tile =  { Number = Nullable 5
-                      Candidates = null } }
+            Board = Boards.init()
+        }
 
     /// The 'update' function to update the model
     let update gameOver msg (model: Model) =
@@ -44,7 +46,7 @@ module App =
     let view (model: Model) =
         Window(
             "Sudoku F# with Fabulous.WPF",
-            (Tiles.view model.Tile
+            (Boards.view model.Board
             )                            
         )
             .width(800)

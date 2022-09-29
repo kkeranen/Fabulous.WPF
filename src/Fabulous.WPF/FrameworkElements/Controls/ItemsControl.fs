@@ -23,7 +23,7 @@ module ItemsControl =
 
     let ItemsSource<'T> =
         Attributes.defineSimpleScalar<WidgetItems<'T>>
-            "ItemsView_ItemsSource"
+            "ItemsControl_ItemsSource"
             (fun a b -> ScalarAttributeComparers.equalityCompare a.OriginalItems b.OriginalItems)
             (fun _ newValueOpt node ->
                 let itemsControl = node.Target :?> ItemsControl
@@ -33,10 +33,11 @@ module ItemsControl =
                     itemsControl.ClearValue(ItemsControl.ItemTemplateProperty)
                     itemsControl.ClearValue(ItemsControl.ItemsSourceProperty)                    
                 | ValueSome value ->
-                    itemsControl.SetValue(
-                        ItemsControl.ItemTemplateProperty,
-                        WidgetDataTemplateSelector(node, unbox >> value.Template)
-                    )
+                    //todo: Fix itemsControl.SetValue
+                    //itemsControl.SetValue(
+                    //    ItemsControl.ItemTemplateProperty,
+                    //    WidgetDataTemplateSelector(node, unbox >> value.Template)
+                    //)
 
                     itemsControl.SetValue(ItemsControl.ItemsSourceProperty, value.OriginalItems))
         

@@ -9,6 +9,8 @@
 
   <ItemGroup>
     <Compile Include="Tile.fs" />
+    <Compile Include="Region.fs" />
+    <Compile Include="Board.fs" />
     <Compile Include="App.fs" />
     <Compile Include="Main.fs" />
   </ItemGroup>
